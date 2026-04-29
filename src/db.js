@@ -169,6 +169,10 @@ export async function insertTrip(trip) {
   return data
 }
 
+export async function deleteTrip(id) {
+  await supabase.from('trips').delete().eq('id', id)
+}
+
 export async function updateTrip(id, fields) {
   await supabase.from('trips').update(fields).eq('id', id)
 }
